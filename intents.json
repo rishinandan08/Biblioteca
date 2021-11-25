@@ -1,0 +1,120 @@
+{"intents": [
+        {"tag": "greeting",
+         "patterns": ["Hi", "Hello", "Hey", "What's up", "sup?"],
+         "responses": ["how are you doing?","how is your day going?","how have you been?"],
+          "context": ""
+        },
+        {"tag":"do_you_like",
+         "patterns":["Ah!, not that great.","Very well thank you!","It was quite tiring.","I've been having a rough day.","I feel very sad.","I'm extremely happy.","It's been a pleasant day","I am still figuring out","It has been ok","great","good","bad","okok","not ok"],
+         "responses":["Let's do something fun and appreciative. So, do you like reading books?"]
+        },
+        {"tag": "ture",
+          "patterns": ["ya","yes","yup","sort of","I do"],
+          "responses": ["What type of books do you read?","What is your sort of books?","What kind of books do you like or read?"],
+          "context": ""
+        },
+        {"tag": "gener",
+          "patterns": ["What do you have?","what's on your store?","What are your collections?"],
+          "responses": ["We have hell lot of differnet gener books like: \n Science \n Fiction \n Horror \n Fantasy \n History \n Fiction \n Romance Novel \n Mystery \n Thriller \n Non Fiction \n Fairy Tale \n Adventure \n Fiction \n Drama","We have plenty of books under the below mentioned geners: \n Science \n Fiction \n Horror \n Fantasy \n History \n Fiction \n Romance Novel \n Mystery \n Thriller \n Non Fiction \n Fairy Tale \n Adventure \n Fiction \n Drama"],
+          "context": ""
+        },
+
+        {"tag": "false",
+          "patterns": ["no","nope","nah","not really","no ways","not intrested"],
+          "responses": ["So, What are your hobbies?","What do you do in your free time?","How do you kill time?"],
+          "context": ""
+        },
+        {"tag": "reco",
+          "patterns": ["could you recommand?","could you recommand some of the best?","can you Please recommand?","Your suggestions Please?","Can you Suggest best of books?","Show me some of the top rated books.","What is trending?","Which are the fast selling books?","Top 10 books","top books","Top selling","beginners books"],
+          "responses": ["Here is what you asked for","There you go","Look into these","Here are some of the Editor's choice","Here are some of the coder's choice","Check out for some of these","Our kick ass collections"],
+          "context": ""
+        },
+        {"tag": "genre_history",
+          "patterns": ["I want history genre books","Suggest me few history books","could i have some recommandations on the genre history","history type books","show history genre books"],
+          "responses": ["here are some history genre books that you asked for"],
+          "context": ""
+        },
+        {"tag": "genre_sci-fi",
+          "patterns": ["I want sci-fi genre books","Suggest me few sci-fi books","could i have some recommandations on the genre sci-fi","sci-fi type books","show sci-fi genre books"],
+          "responses": ["here are some sci-fi genre books that you asked for"],
+          "context": ""
+        },
+        {"tag": "genre_",
+          "patterns": ["I want {} genre books","Suggest me few {} books","could i have some recommandations on the genre {}","{} type books","show {} genre books"],
+          "responses": ["here are some {} genre books that you asked for"],
+          "context": ""
+        },
+        {"tag": "genre_",
+          "patterns": ["I want {} genre books","Suggest me few {} books","could i have some recommandations on the genre {}","{} type books","show {} genre books"],
+          "responses": ["here are some {} genre books that you asked for"],
+          "context": ""
+        },
+        {"tag": "genre_",
+          "patterns": ["I want {} genre books","Suggest me few {} books","could i have some recommandations on the genre {}","{} type books","show {} genre books"],
+          "responses": ["here are some {} genre books that you asked for"],
+          "context": ""
+        },
+        {"tag": "genre_",
+          "patterns": ["I want {} genre books","Suggest me few {} books","could i have some recommandations on the genre {}","{} type books","show {} genre books"],
+          "responses": ["here are some {} genre books that you asked for"],
+          "context": ""
+        },
+        {"tag": "genre_",
+          "patterns": ["I want {} genre books","Suggest me few {} books","could i have some recommandations on the genre {}","{} type books","show {} genre books"],
+          "responses": ["here are some {} genre books that you asked for"],
+          "context": ""
+        },
+
+
+
+
+
+
+
+
+        {"tag": "true?",
+         "patterns": ["is it?", "really?", "prove me yourself", "You are that good?", "Show me", "Demo"],
+         "responses": []
+        },
+        {"tag": "goodbye",
+         "patterns": ["cya", "See you later", "Goodbye", "I am Leaving", "Have a Good day", "good night"],
+         "responses": ["Sad to see you go :(", "Talk to you later", "Goodbye!"],
+         "context_set": ""
+        },
+        {"tag": "age",
+         "patterns": ["how old", "how old is biblioteca", "what is your age", "how old are you", "age?"],
+         "responses": ["I was created on 3-11-2021"],
+         "context_set": ""
+        },
+        {"tag": "name",
+         "patterns": ["what is your name", "what should I call you", "whats your name?"],
+         "responses": ["You can call me biblioteca.", "I'm biblioteca!", "I'm biblioteca aka Tech With biblioteca."],
+         "context_set": ""
+        },
+        {"tag": "hours",
+         "patterns": ["when are you guys open", "what are your hours", "hours of operation"],
+         "responses": ["We are open 24/7 365days"],
+         "context_set": ""
+        },
+        {"tag": "thanks",
+         "patterns": ["Thanks", "Thank you", "That's helpful", "Awesome, thanks", "Thanks for helping me"],
+         "responses": ["Happy to help!", "Any time!", "My pleasure"],
+         "context": ""
+        },
+        {"tag": "noanswer",
+         "patterns": [""],
+         "responses": ["Sorry, can't understand you", "Please give me more info", "Not sure I understand"],
+         "context": ""
+        },
+        {"tag": "gener",
+          "patterns": ["What type of gener are available?"],
+          "responses": ["We have "],
+          "context": ""
+        },
+        {"tag": "",
+          "patterns": [""],
+          "responses": [""],
+          "context": ""
+        }
+   ]
+}
