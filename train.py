@@ -12,8 +12,6 @@ from model import NeuralNet
 with open('intents.json', 'r') as f:
     intents = json.load(f)
 
-with open('output1.json', 'r') as f1:
-    intents1= json.load(f1)
 
 all_words = []
 tags = []
@@ -31,41 +29,6 @@ for intent in intents['intents']:
         # add to xy pair
         xy.append((w, tag))
 
-xy1 = []
-nos = []
-titles = []
-authors = []
-genres = []
-# loop through each sentence in our intents patterns
-for intent in intents1['intents1']:
-    no = intent['No']
-    # add to number(no) list
-    nos.append(no)
-    for pattern in intent['Title']:
-        # tokenize each word in the sentence
-        w = tokenize(pattern)
-        # add to our words list
-        all_words.extend(w)
-        # add to xy pair
-        xy1.append((w, no))
-    for pattern in intent['author']:
-        # tokenize each word in the sentence
-        w = tokenize(pattern)
-        # add to our words list
-        all_words.extend(w)
-        # add to xy pair
-        xy1.append((w, no))
-    for pattern in intent['genre']:
-        # tokenize each word in the sentence
-        w = tokenize(pattern)
-        # add to our words list
-        all_words.extend(w)
-        # add to xy pair
-        xy1.append((w, no))
-
-#print(xy)
-#print("xy1...")
-#print(xy1)
 
 # stem and lower each word
 ignore_words = ['?', '.', '!']
@@ -74,17 +37,10 @@ all_words = [stem(w) for w in all_words if w not in ignore_words]
 all_words = sorted(set(all_words))
 tags = sorted(set(tags))
 
-nos = sorted(set(nos))
 
 print(len(xy), "patterns")
 print(len(tags), "tags:", tags)
-print(len(nos), "nos:", nos)
-
-#print(len(titles), "titles:", titles)
-#print(len(authors), "authors:", authors)
-#print(len(genres), "genres:", genres)
-
-print(len(all_words), "unique stemmed words:", all_words)
+#print(len(all_words), "unique stemmed words:", all_words)
 
 # create training data
 X_train = []
@@ -97,24 +53,17 @@ for (pattern_sentence, tag) in xy:
     label = tags.index(tag)
     y_train.append(label)
 
-for (pattern_sentence, no) in xy1:
-    # X: bag of words for each pattern_sentence
-    bag = bag_of_words(pattern_sentence, all_words)
-    X_train.append(bag)
-    # y: PyTorch CrossEntropyLoss needs only class labels, not one-hot
-    label = nos.index(no)
-    y_train.append(label)
 
 X_train = np.array(X_train)
 y_train = np.array(y_train)
 print("length.......",len(y_train))
 # Hyper-parameters
-num_epochs = 2000
+num_epochs = 1000
 batch_size = 8
 learning_rate = 0.001
 input_size = len(X_train[0])
 hidden_size = 8
-output_size = len(tags)+len(nos)
+output_size = len(tags)
 print(input_size, output_size)
 
 class ChatDataset(Dataset):
@@ -175,8 +124,7 @@ data = {
 "hidden_size": hidden_size,
 "output_size": output_size,
 "all_words": all_words,
-"tags": tags,
-"nos": nos
+"tags": tags
 }
 
 FILE = "data.pth"

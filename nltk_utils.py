@@ -10,7 +10,8 @@ def tokenize(sentence):
     split sentence into array of words/tokens
     a token can be a word or punctuation character, or number
     """
-    return nltk.word_tokenize(sentence)
+    lower = sentence.lower()
+    return nltk.word_tokenize(lower)
 
 
 def stem(word):
@@ -38,7 +39,7 @@ def bag_of_words(tokenized_sentence, words):
     # initialize bag with 0 for each word
     bag = np.zeros(len(words), dtype=np.float32)
     for idx, w in enumerate(words):
-        if w in sentence_words: 
+        if w in sentence_words:
             bag[idx] = 1
 
     return bag

@@ -44,12 +44,12 @@ def get_response(msg):
         for intent in intents['intents']:
             if tag == intent["tag"]:
                 return random.choice(intent['responses'])
-
     return "I do not understand..."
 
 
 if __name__ == "__main__":
     print("Let's chat! (type 'quit' to exit)")
+    print("Hi. My name is Biblioteca. How can I help you?")
     while True:
         # sentence = "do you use credit cards?"
         sentence = input("You: ")
